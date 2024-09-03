@@ -1,0 +1,115 @@
+---
+title: "Programming in Base R"
+format: html
+editor: visual
+---
+
+Create vectors.
+```{r}
+prebp <- c(120, 151, 125, 126, 115, 132, 132, 129, 134, 139, 127, 122, 127, 135, 133, 128, 147, 138, 140, 132)
+
+postbp <- c(127, 145, 135, 122, 115, 122, 123, 126, 126, 129, 132, 146, 120, 114, 121, 120, 128, 120, 133, 115)
+```
+Assign names to the vectors.
+```{r}
+names(prebp) <- paste("Subject", 1:20, sep = "_")
+names(postbp) <- paste("Subject", 1:20, sep = "_")
+```
+Calculating the change in blood pressure between measurements.
+```{r}
+diffbp <- prebp-postbp
+```
+Calculating average decrease in blood pressure across all patients.
+```{r}
+mean(diffbp)
+```
+Determine which patients experienced a decrease in blood pressure after treatment (a positive change).
+```{r}
+which(diffbp > 0)
+```
+Subset differences vector to only return positive change.
+```{r}
+positivechange <- diffbp > 0
+positivechange2 <- diffbp[positivechange]
+```
+Calculating average decrease  in blood pressure for those where the blood pressure decreased (positive change).
+```{r}
+mean(positivechange2)
+```
+
+```{r}
+bp_df <- data.frame(pre_bp = prebp, post_bp = postbp, diff_bp = diffbp)
+```
+
+```{r}
+bp_df$post_bp_less_than_120 <- postbp < 120
+```
+
+```{r}
+final_bp_df <- subset(bp_df, diffbp < 0)
+```
+
+```{r}
+attributes(bp_df)
+```
+
+```{r}
+knitr::kable(final_bp_df)
+```
+
+```{r}
+prebp2 <- c(138, 135, 147, 117, 152, 134, 114, 121, 131, 130)
+postbp2 <- c(105, 136, 123, 130, 134, 143, 135, 139, 120, 124)
+```
+
+```{r}
+names(prebp2) <- paste("Subject", 1:10, sep = "_")
+names(postbp2) <- paste("Subject", 1:10, sep = "_")
+```
+
+```{r}
+diffbp2 <- prebp2-postbp2
+```
+
+Determine which patients experienced a decrease in blood pressure after treatment (a positive change).
+```{r}
+which(diffbp2 > 0)
+```
+
+Subset differences vector to only return positive change.
+```{r}
+positivechange01 <- diffbp > 0
+positivechange02 <- diffbp[positivechange]
+```
+
+```{r}
+bp_df2 <- data.frame(pre_bp = prebp2, post_bp = postbp2, diff_bp = diffbp2)
+```
+
+```{r}
+bp_df2$post_bp_less_than_120 <- postbp2 < 120
+```
+
+```{r}
+final_bp_df2 <- subset(bp_df2, diffbp2 < 0)
+```
+
+```{r}
+bplist <- list(treatment = final_bp_df, placebo = final_bp_df2)
+```
+
+```{r}
+bplist [1]
+```
+```{r}
+bplist [[1]]
+```
+
+```{r}
+bplist$treatment
+```
+
+```{r}
+head(bplist$placebo[1])
+```
+
