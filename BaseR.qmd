@@ -36,27 +36,23 @@ Calculating average decrease  in blood pressure for those where the blood pressu
 ```{r}
 mean(positivechange2)
 ```
-
+Creating data frame.
 ```{r}
-bp_df <- data.frame(pre_bp = prebp, post_bp = postbp, diff_bp = diffbp)
+bp_df <- data.frame(patients = names(prebp), pre_bp = prebp, post_bp = postbp, diff_bp = diffbp)
 ```
-
-```{r}
-bp_df$post_bp_less_than_120 <- postbp < 120
-```
-
+Return rows where diffpb column is negative.
 ```{r}
 final_bp_df <- subset(bp_df, diffbp < 0)
 ```
-
+Adding column where post_bp is less than 120.
 ```{r}
-attributes(bp_df)
+bp_df$post_bp_less_than_120 <- postbp < 120
 ```
-
+Printing the data frame.
 ```{r}
 knitr::kable(final_bp_df)
 ```
-
+Creating vectors with the new placebo data set.
 ```{r}
 prebp2 <- c(138, 135, 147, 117, 152, 134, 114, 121, 131, 130)
 postbp2 <- c(105, 136, 123, 130, 134, 143, 135, 139, 120, 124)
@@ -81,23 +77,23 @@ Subset differences vector to only return positive change.
 positivechange01 <- diffbp > 0
 positivechange02 <- diffbp[positivechange]
 ```
-
+Creating a data frame from placebo data.
 ```{r}
-bp_df2 <- data.frame(pre_bp = prebp2, post_bp = postbp2, diff_bp = diffbp2)
+bp_df2 <- data.frame(patients = names(prebp2), pre_bp = prebp2, post_bp = postbp2, diff_bp = diffbp2)
 ```
-
+Returning postbp values of less than 120.
 ```{r}
 bp_df2$post_bp_less_than_120 <- postbp2 < 120
 ```
-
+Returning rows where diffbp is negative
 ```{r}
 final_bp_df2 <- subset(bp_df2, diffbp2 < 0)
 ```
-
+Creating a list from the two data frames.
 ```{r}
 bplist <- list(treatment = final_bp_df, placebo = final_bp_df2)
 ```
-
+Accessing the first list element using three types of syntax.
 ```{r}
 bplist [1]
 ```
@@ -108,8 +104,8 @@ bplist [[1]]
 ```{r}
 bplist$treatment
 ```
-
+Accessing prebp column of placebo data frame.
 ```{r}
-head(bplist$placebo[1])
+head(bplist$placebo[2])
 ```
 
