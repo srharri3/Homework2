@@ -46,7 +46,7 @@ final_bp_df <- subset(bp_df, diffbp < 0)
 ```
 Adding column where post_bp is less than 120.
 ```{r}
-bp_df$post_bp_less_than_120 <- postbp < 120
+final_bp_df$post_bp_less_than_120 <- final_bp_df$post_bp < 120
 ```
 Printing the data frame.
 ```{r}
