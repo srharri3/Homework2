@@ -181,7 +181,7 @@ Subject_20
 </div>
 <p>Creating data frame.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>bp_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">patients =</span> <span class="fu">names</span>(prebp), <span class="at">pre_bp =</span> prebp, <span class="at">post_bp =</span> postbp, <span class="at">diff_bp =</span> diffbp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>bp_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">patient =</span> <span class="fu">names</span>(prebp), <span class="at">pre_bp =</span> prebp, <span class="at">post_bp =</span> postbp, <span class="at">diff_bp =</span> diffbp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Return rows where diffpb column is negative.</p>
 <div class="cell">
@@ -199,7 +199,7 @@ Subject_20
 <thead>
 <tr class="header">
 <th style="text-align: left;"></th>
-<th style="text-align: left;">patients</th>
+<th style="text-align: left;">patient</th>
 <th style="text-align: right;">pre_bp</th>
 <th style="text-align: right;">post_bp</th>
 <th style="text-align: right;">diff_bp</th>
@@ -265,7 +265,7 @@ Subject_20
 </div>
 <p>Creating a data frame from placebo data.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>bp_df2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">patients =</span> <span class="fu">names</span>(prebp2), <span class="at">pre_bp =</span> prebp2, <span class="at">post_bp =</span> postbp2, <span class="at">diff_bp =</span> diffbp2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>bp_df2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">patient =</span> <span class="fu">names</span>(prebp2), <span class="at">pre_bp =</span> prebp2, <span class="at">post_bp =</span> postbp2, <span class="at">diff_bp =</span> diffbp2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Returning postbp values of less than 120.</p>
 <div class="cell">
@@ -284,7 +284,7 @@ Subject_20
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>bplist [<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$treatment
-             patients pre_bp post_bp diff_bp
+              patient pre_bp post_bp diff_bp
 Subject_1   Subject_1    120     127      -7
 Subject_3   Subject_3    125     135     -10
 Subject_11 Subject_11    127     132      -5
@@ -294,7 +294,7 @@ Subject_12 Subject_12    122     146     -24</code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>bplist [[<span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>             patients pre_bp post_bp diff_bp
+<pre><code>              patient pre_bp post_bp diff_bp
 Subject_1   Subject_1    120     127      -7
 Subject_3   Subject_3    125     135     -10
 Subject_11 Subject_11    127     132      -5
@@ -304,7 +304,7 @@ Subject_12 Subject_12    122     146     -24</code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>bplist<span class="sc">$</span>treatment</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>             patients pre_bp post_bp diff_bp
+<pre><code>              patient pre_bp post_bp diff_bp
 Subject_1   Subject_1    120     127      -7
 Subject_3   Subject_3    125     135     -10
 Subject_11 Subject_11    127     132      -5

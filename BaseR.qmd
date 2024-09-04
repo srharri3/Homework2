@@ -38,7 +38,7 @@ mean(positivechange2)
 ```
 Creating data frame.
 ```{r}
-bp_df <- data.frame(patients = names(prebp), pre_bp = prebp, post_bp = postbp, diff_bp = diffbp)
+bp_df <- data.frame(patient = names(prebp), pre_bp = prebp, post_bp = postbp, diff_bp = diffbp)
 ```
 Return rows where diffpb column is negative.
 ```{r}
@@ -79,7 +79,7 @@ positivechange02 <- diffbp[positivechange]
 ```
 Creating a data frame from placebo data.
 ```{r}
-bp_df2 <- data.frame(patients = names(prebp2), pre_bp = prebp2, post_bp = postbp2, diff_bp = diffbp2)
+bp_df2 <- data.frame(patient = names(prebp2), pre_bp = prebp2, post_bp = postbp2, diff_bp = diffbp2)
 ```
 Returning postbp values of less than 120.
 ```{r}
