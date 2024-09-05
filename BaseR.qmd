@@ -4,6 +4,7 @@ format: html
 editor: visual
 ---
 
+#Task 1: Basic Vector Practice
 Create vectors.
 ```{r}
 prebp <- c(120, 151, 125, 126, 115, 132, 132, 129, 134, 139, 127, 122, 127, 135, 133, 128, 147, 138, 140, 132)
@@ -36,6 +37,7 @@ Calculating average decrease  in blood pressure for those where the blood pressu
 ```{r}
 mean(positivechange2)
 ```
+#Task 2: Basic Data Frame Practice
 Creating data frame.
 ```{r}
 bp_df <- data.frame(patient = names(prebp), pre_bp = prebp, post_bp = postbp, diff_bp = diffbp)
@@ -52,6 +54,7 @@ Printing the data frame.
 ```{r}
 knitr::kable(final_bp_df)
 ```
+#Task 3: List Practice
 Creating vectors with the new placebo data set.
 ```{r}
 prebp2 <- c(138, 135, 147, 117, 152, 134, 114, 121, 131, 130)
